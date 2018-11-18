@@ -36,7 +36,6 @@ def sigmoid_p(x):
 
 T = np.linspace(-5, 5, 10)
 Y = sigmoid(T)
-plt.plot(T, Y)
 
 # Training loop
 for i in range(1000):
