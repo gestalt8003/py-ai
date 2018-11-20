@@ -66,15 +66,19 @@ for i in range(50000):
 	w2 = w2 - learning_rate * dcost_dw2
 	b = b - learning_rate * dcost_db
 
-# Predictions
-for i in range(len(data)):
-	point = data[i]
+
+def predict(point):
 	print(point)
 	z = point[0] * w1 + point[1] * w2 + b
 	pred = sigmoid(z)
-	print("pred: {}".format(pred))
+	type = "red"
+	if(pred < 0.5):
+		type = "blue"
+	print("prediction: {} \n".format(type))
 
+# Predictions
+for i in range(len(data)):
+	point = data[i]
+	predict(point)
 
-z = mystery_flower[0] * w1 + mystery_flower[1] * w2 + b
-pred = sigmoid(z)
-print("pred: {}".format(pred))
+predict(mystery_flower)
